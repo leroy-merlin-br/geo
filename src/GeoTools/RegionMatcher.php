@@ -125,7 +125,7 @@ class RegionMatcher
      */
     protected function addRegion(Polygon $regionPolygon, $regionName)
     {
-        $regions[$regionName] = $regionPolygon;
+        $this->regions[$regionName] = $regionPolygon;
 
         return true;
     }
