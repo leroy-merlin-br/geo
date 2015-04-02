@@ -1,7 +1,8 @@
 {
     "name": "leroy-merlin-br/geo",
     "minimum-stability": "dev",
-    "description": "Geo location utils",
+    "description": "Geolocation utilities",
+    "keywords": ["geolocation","kml","polygon","gps","map","location","geo"],
     "license": "MIT",
     "authors": [
         {
