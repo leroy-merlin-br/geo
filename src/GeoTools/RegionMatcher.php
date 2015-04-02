@@ -28,9 +28,9 @@ class RegionMatcher
      */
     public $regions = [];
 
-    public function __construct(Isolator $php)
+    public function __construct(Isolator $php = null)
     {
-        $this->php = $php;
+        $this->php = $php ?: new Isolator;
     }
 
     /**
