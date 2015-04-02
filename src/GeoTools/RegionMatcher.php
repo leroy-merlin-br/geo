@@ -1,4 +1,5 @@
 <?php
+namespace LeroyMerlin\GeoTools;
 
 use LeroyMerlin\GeoTools\Exception\GeoDataException;
 use Icecave\Isolator\Isolator;
