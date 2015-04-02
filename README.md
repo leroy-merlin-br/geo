@@ -20,3 +20,37 @@ $regionMatcher->loadRegion('/path/to/farAwayRegion.kml');
 $regionMatcher->getRegionsThatMatches(23, 23);
 // returns ['myRegion', 'intersectingRegion']
 ```
+
+## IP to geolocation
+
+`LeroyMerlin\GeoTools\IpLocator` uses _ip-api.com_ to find out the geolocation of a given IP address.
+
+**Example of use:**
+
+```PHP
+$locator = new LeroyMerlin\GeoTools\IpLocator;
+
+$locator->getLocation('208.80.152.201');
+// array(
+//   'as' => 'AS14907 Wikimedia Foundation Inc.',
+//   'city' => 'San Francisco',
+//   'country' => 'United States',
+//   'countryCode' => 'US',
+//   'isp' => 'Wikimedia Foundation',
+//   'lat' => 37.7898,
+//   'lon' => -122.3942,
+//   'org' => 'Wikimedia Foundation',
+//   'query' => '208.80.152.201',
+//   'region' => 'CA',
+//   'regionName' => 'California',
+//   'status' => 'success',
+//   'timezone' => 'America/Los_Angeles',
+//   'zip' => '94105'
+// )
+
+$locator->getCoordinates('208.80.152.201');
+// array(
+//   'x' => 37.7898,
+//   'y' => -122.3942
+// )
+```
