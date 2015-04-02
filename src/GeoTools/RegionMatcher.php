@@ -71,7 +71,7 @@ class RegionMatcher
     public function loadRegionData($kmlContent, $regionName)
     {
         $adapter  = new KML;
-        $polygon = $adapter->read(file_get_contents('resources/regions/sorocaba.kml'));
+        $polygon = $adapter->read($kmlContent);
 
         if ($polygon instanceof Polygon) {
             return $this->addRegion($polygon, $regionName);
