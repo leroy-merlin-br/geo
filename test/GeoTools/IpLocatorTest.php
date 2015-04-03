@@ -35,4 +35,28 @@ class IpLocatorTest extends \PHPUnit_Framework_TestCase
             $result
         );
     }
+
+    public function testShouldGetCoordinates()
+    {
+        // Set
+        $ip = '123.456.789.10';
+        $curl = m::mock('Curl\Curl');
+        $locator = m::mock(
+            'LeroyMerlin\GeoTools\IpLocator[getLocation]',
+            [$curl]
+        );
+
+        // Expectation
+        $curl->shouldReceive('close');
+        $locator->shouldReceive('getLocation')
+            ->once()
+            ->with($ip)
+            ->andReturn(['lat'=>123, 'lon'=>456]);
+
+        // Assertion
+        $this->assertEquals(
+            ['x'=>123, 'y'=>456],
+            $locator->getCoordinates($ip)
+        );
+    }
 }
