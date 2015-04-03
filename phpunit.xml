@@ -12,7 +12,7 @@
 >
     <testsuites>
         <testsuite name="unit">
-            <directory suffix=".php">./test/src/</directory>
+            <directory suffix=".php">./test/GeoTools</directory>
         </testsuite>
     </testsuites>
     <filter>
