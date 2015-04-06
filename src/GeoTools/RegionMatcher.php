@@ -55,7 +55,7 @@ class RegionMatcher
         }
 
         if (! $regionName) {
-            $regionName = $this->php->basename($kmlFilename, 'kml');
+            $regionName = $this->php->basename($kmlFilename, '.kml');
         }
 
         return $this->loadRegionData($data, $regionName);
