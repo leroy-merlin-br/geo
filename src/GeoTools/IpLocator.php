@@ -13,6 +13,21 @@ use Curl\Curl;
 class IpLocator
 {
     /**
+     * @var Curl
+     */
+    protected $curl;
+
+    /**
+     * Constructs a new IpLocator
+     *
+     * @param Curl
+     */
+    public function __construct(Curl $curl = null)
+    {
+        $this->curl = $curl ?: new Curl;
+    }
+
+    /**
      * Returns a location for the given IP
      *
      * @param  string   $ip
@@ -21,11 +36,10 @@ class IpLocator
      */
     public function getLocation($ip)
     {
-        $curl = new Curl;
-        $curl->get('http://ip-api.com/json/'.$ip);
+        $this->curl->get('http://ip-api.com/json/'.$ip);
 
-        if (! $curl->error) {
-            return json_decode($curl->response, true);
+        if (! $this->curl->error) {
+            return json_decode($this->curl->response, true);
         }
 
         return [];
