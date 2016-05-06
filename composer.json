@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "~1.1.0",
+        "vlucas/phpdotenv": "^1.1|^2.0",
         "phayes/geophp": "dev-master",
         "icecave/isolator": "~3.0.3",
         "curl/curl": "~1.1.0"
