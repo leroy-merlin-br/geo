@@ -92,7 +92,11 @@ class RegionMatcher
      */
     public function getRegionsThatMatches($x, $y)
     {
-        return $this->getRegionsThatMatchesPoint(new Point($x, $y));
+        if (is_numeric($x) && is_numeric($y)) {
+            return $this->getRegionsThatMatchesPoint(new Point($x, $y));
+        }
+
+        return [];
     }
 
     /**
